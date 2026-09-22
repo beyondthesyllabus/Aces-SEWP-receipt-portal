@@ -154,9 +154,9 @@
     if (name.length < 3) { nameEl.focus(); return showError("Enter your full name."); }
     if (!/^[A-Z0-9\/\-_.]{3,30}$/.test(reg)) { regEl.focus(); return showError("Enter a valid registration number."); }
 
-    if (reg.indexOf("ME") === -1) {
+    if (reg.indexOf("CO") === -1) {
       regEl.focus();
-      return showError("Invalid registration number. Registration number must belong to Mechanical Engineering (must include 'ME', e.g. 22/EG/ME/001).");
+      return showError("Invalid registration number. Registration number must belong to Computer Engineering (must include 'ME', e.g. 22/EG/CO/001).");
     }
 
     if (files.length === 0) return showError("Attach your receipt photo.");

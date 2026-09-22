@@ -46,7 +46,7 @@ Always serve it over HTTPS: the admin password and receipts travel over the conn
 
 | Variable | Purpose | Default |
 |---|---|---|
-| `ADMIN_PASSWORD` | Password for /admin | `Mech001` (change it!) |
+| `ADMIN_PASSWORD` | Password for /admin | `Com001` (change it!) |
 | `SESSION_SECRET` | Signs admin login cookies (any long random text) | derived from password |
 | `DATA_DIR` | Where the database and receipts are stored | `./data` |
 | `PORT` | Port to listen on | `3000` |

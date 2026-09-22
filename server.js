@@ -231,10 +231,10 @@ app.post(
         return res.status(400).json({
           error: "Enter a valid registration number (letters, numbers, / - _ . only).",
         });
-      if (!reg.includes("ME"))
+      if (!reg.includes("CO"))
         return res.status(400).json({
           error:
-            "Registration number must belong to Mechanical Engineering (must contain 'ME', e.g. 22/EG/ME/001).",
+            "Registration number must belong to Computer Engineering (must contain 'CO', e.g. 22/EG/CO/001).",
         });
       if (!req.files || req.files.length === 0)
         return res.status(400).json({ error: "Attach your receipt photo." });
@@ -299,7 +299,7 @@ app.post("/api/admin/logout", (req, res) => {
   res.json({ ok: true });
 });
 
-app.get("/api/admin/me", (req, res) => {
+app.get("/api/admin/co", (req, res) => {
   res.json({ signedIn: tokenValid(parseCookies(req).admin), title: SITE_TITLE });
 });
 
@@ -671,7 +671,7 @@ async function buildPdf(students, { includeReceipts }) {
   return Buffer.from(await pdf.save());
 }
 
-// The first part of a registration number (22 in 22/EG/ME/1692) decides which group a student is in.
+// The first part of a registration number (22 in 22/EG/CO/1692) decides which group a student is in.
 function yearOf(reg) {
   const m = /^(\d{1,4})\//.exec(String(reg));
   return m ? m[1] : "Other";
