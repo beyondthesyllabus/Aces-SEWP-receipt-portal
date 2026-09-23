@@ -156,7 +156,7 @@
 
     if (reg.indexOf("CO") === -1) {
       regEl.focus();
-      return showError("Invalid registration number. Registration number must belong to Computer Engineering (must include 'ME', e.g. 22/EG/CO/001).");
+      return showError("Invalid registration number. Registration number must belong to Computer Engineering (must include 'CO', e.g. 22/EG/CO/001).");
     }
 
     if (files.length === 0) return showError("Attach your receipt photo.");
