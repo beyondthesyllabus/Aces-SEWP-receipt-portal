@@ -70,6 +70,31 @@
       </div>
     </div>
     <p class="updated" id="updated" aria-live="polite"></p>
+
+    <!-- Date / time range tracker -->
+    <section class="range-panel" aria-label="Track uploads by date and time">
+      <div class="range-title">Track uploads by date &amp; time</div>
+      <div class="range-fields">
+        <label class="range-field">
+          <span>Start</span>
+          <input type="datetime-local" id="fromDate">
+        </label>
+        <span class="range-arrow" aria-hidden="true">&rarr;</span>
+        <label class="range-field">
+          <span>End</span>
+          <input type="datetime-local" id="toDate">
+        </label>
+      </div>
+      <div class="range-presets">
+        <button type="button" class="chip" data-preset="today">Today</button>
+        <button type="button" class="chip" data-preset="7">Last 7 days</button>
+        <button type="button" class="chip" data-preset="30">Last 30 days</button>
+        <button type="button" class="chip" data-preset="all">All time</button>
+        <button type="button" class="chip chip-clear" id="clearRange">Clear</button>
+      </div>
+      <p class="range-status" id="rangeStatus" aria-live="polite"></p>
+    </section>
+
     <p class="hint" id="hint">Download PDF and Print generate formatted A4 documents. Tick rows to filter export by
       selected students.</p>
 
@@ -82,7 +107,7 @@
             <th class="sn">S/N</th>
             <th>Full Name</th>
             <th>Reg. Number</th>
-
+            <th class="num">Receipts</th>
             <th>Submission Date</th>
             <th class="rowactions"><span class="sr">Actions</span></th>
           </tr>
